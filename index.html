@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tyrs R</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyrs R</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@9.16.0/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@9.16.0/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body>
-  <div id="particles-js"></div>
-  <header>
-    <h1>Tyrs R</h1>
-    <nav>
-      <a href="tasks.html">Tasks</a>
-      <a href="blog.html">Blog</a>
-      <a href="#">Music</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Welcome to Tyrs R</h2>
-    <p>Your personal growth hub. Check your tasks, read blogs, and listen to music.</p>
-    <div id="spotify-player">
-      <!-- Spotify Player will be embedded here -->
-    </div>
-  </main>
-  <footer>
-    <p>© 2024 Tyrs R</p>
-  </footer>
-  <script src="script.js"></script>
+    <div id="particles-js"></div>
+    <header>
+        <h1>Tyrs R</h1>
+        <p>Your dynamic productivity hub.</p>
+    </header>
+    <main>
+        <section id="task-manager">
+            <h2>Task Manager</h2>
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="Add a new task" required>
+                <button type="submit">Add Task</button>
+            </form>
+            <ul id="task-list"></ul>
+        </section>
+        <section id="spotify-player">
+            <h2>Music Player</h2>
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" 
+                    width="300" height="80" 
+                    frameborder="0" allowtransparency="true" allow="encrypted-media">
+            </iframe>
+        </section>
+        <section id="blog">
+            <h2>Blog</h2>
+            <div id="blog-posts"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tyrs R. All rights reserved.</p>
+    </footer>
+    <script src="particles-config.json"></script>
+    <script src="script.js"></script>
+    <script src="firebase.js"></script>
 </body>
 </html>
