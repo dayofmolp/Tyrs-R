@@ -1,45 +1,30 @@
-// Task Management
-const taskList = document.getElementById("task-list");
-const taskForm = document.getElementById("task-form");
-const newTaskInput = document.getElementById("new-task");
+// Particles.js initialization
+particlesJS.load('particles-js', 'particles-config.json');
 
-taskForm.addEventListener("submit", (e) => {
+// Task Manager
+const taskForm = document.getElementById('add-task-form');
+const taskList = document.getElementById('task-list');
+
+taskForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const newTask = newTaskInput.value.trim();
-  if (newTask) {
-    addTask(newTask);
-    newTaskInput.value = "";
+  const taskText = document.getElementById('task-input').value;
+  if (taskText) {
+    const taskItem = document.createElement('li');
+    taskItem.textContent = taskText;
+    const subTaskList = document.createElement('ul');
+    const subTaskInput = document.createElement('input');
+    subTaskInput.placeholder = 'Add a sub-task...';
+    subTaskInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const subTask = document.createElement('li');
+        subTask.textContent = e.target.value;
+        subTaskList.appendChild(subTask);
+        e.target.value = '';
+      }
+    });
+    taskItem.appendChild(subTaskList);
+    taskItem.appendChild(subTaskInput);
+    taskList.appendChild(taskItem);
+    document.getElementById('task-input').value = '';
   }
 });
-
-function addTask(task) {
-  const li = document.createElement("li");
-  li.textContent = task;
-  taskList.appendChild(li);
-}
-
-// Blog Management
-const blogPosts = document.getElementById("blog-posts");
-const newBlogPost = document.getElementById("new-blog-post");
-const publishBlog = document.getElementById("publish-blog");
-
-publishBlog.addEventListener("click", () => {
-  const content = newBlogPost.value.trim();
-  if (content) {
-    const post = document.createElement("div");
-    post.textContent = content;
-    post.classList.add("blog-post");
-    blogPosts.appendChild(post);
-    newBlogPost.value = "";
-  }
-});
-
-// Animated Background Particles
-function createParticles() {
-  const particle = document.createElement("div");
-  particle.classList.add("particle");
-  document.body.appendChild(particle);
-  setTimeout(() => particle.remove(), 4000);
-}
-
-setInterval(createParticles, 100);
