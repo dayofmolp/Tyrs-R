@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tyrs R - Task & Resource Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons -->
+</head>
+<body>
+  <div id="background"></div>
+  <header>
+    <div id="branding">
+      <h1><span>Tyrs</span> R</h1>
+      <p>Your Task & Resource Hub</p>
+    </div>
+    <nav>
+      <a href="#tasks">Tasks</a>
+      <a href="#resources">Resources</a>
+      <a href="#blog">Blog</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Task Section -->
+    <section id="tasks">
+      <h2>Task Manager</h2>
+      <ul id="task-list"></ul>
+      <form id="task-form">
+        <input type="text" id="new-task" placeholder="Add a new task..." required>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <!-- Resource Section -->
+    <section id="resources">
+      <h2>Academic Resources</h2>
+      <ul id="resource-list">
+        <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy - Free Math & Science Resources</a></li>
+        <li><a href="https://www.sqlzoo.net" target="_blank">SQL Zoo - Interactive SQL Practice</a></li>
+        <li><a href="https://aws.amazon.com/training/" target="_blank">AWS Training and Certification</a></li>
+        <li><a href="https://lichess.org/" target="_blank">Lichess - Free Chess Platform</a></li>
+        <li><a href="https://github.com/" target="_blank">GitHub - Explore Open-Source Projects</a></li>
+      </ul>
+    </section>
+
+    <!-- Spotify Section -->
+    <section id="spotify">
+      <h2>Music Player</h2>
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4JAvHpjipBk" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2>Blog</h2>
+      <textarea id="new-blog-post" placeholder="Share your thoughts..."></textarea>
+      <button id="publish-blog">Publish</button>
+      <div id="blog-posts"></div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Tyrs R. Crafted with focus and passion.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
